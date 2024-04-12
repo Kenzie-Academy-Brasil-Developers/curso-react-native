@@ -1,5 +1,6 @@
 import { useState } from "react"
-import { View } from "react-native"
+import { StyleSheet, View } from "react-native"
+import { TodoCreateForm } from "./TodoCreateForm";
 
 interface ITodo{
     id: number;
@@ -23,7 +24,7 @@ export const TodoSection = () => {
 
     return(
         <View>
-
+            <TodoCreateForm addTodo={addTodo} />
         </View>
     )
 }

@@ -1,9 +1,10 @@
 import { StyleSheet, Text, View } from "react-native";
+import { TodoSection } from "./components/TodoSection";
 
 export default function App() {
    return (
       <View>
-         <Text style={styles.title}>Olá mundo!</Text>
+         <TodoSection />
       </View>
    );
 }
