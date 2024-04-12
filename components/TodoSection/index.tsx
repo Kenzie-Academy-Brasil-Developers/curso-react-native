@@ -1,8 +1,9 @@
 import { useState } from "react"
 import { View } from "react-native"
 import { TodoCreateForm } from "./TodoCreateForm";
+import { TodoList } from "./TodoList";
 
-interface ITodo{
+export interface ITodo{
     id: number;
     title: string;
     content: string;
@@ -25,6 +26,7 @@ export const TodoSection = () => {
     return(
         <View>
             <TodoCreateForm addTodo={addTodo} />
+            <TodoList todoList={todoList} removeTodo={removeTodo} />
         </View>
     )
 }
