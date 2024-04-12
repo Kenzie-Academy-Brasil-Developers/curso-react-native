@@ -1,11 +1,10 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { StyleSheet, SafeAreaView, TextInput, Button } from "react-native";
+import { TodoContext } from "../../../providers/TodoContext";
 
-interface Props {
-   addTodo: (title: string, content: string) => void;
-}
+export const TodoCreateForm = () => {
+   const { addTodo } = useContext(TodoContext);
 
-export const TodoCreateForm = ({ addTodo }: Props) => {
    const [title, setTitle] = useState("");
    const [content, setContent] = useState("");
 

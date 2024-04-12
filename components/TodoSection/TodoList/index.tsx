@@ -1,17 +1,15 @@
+import { useContext } from "react";
 import { View, Text, Button } from "react-native";
-import { ITodo } from "..";
+import { TodoContext } from "../../../providers/TodoContext";
 
-interface Props {
-   todoList: ITodo[];
-   removeTodo: (id: number) => void;
-}
+export const TodoList = () => {
+   const { todoList, removeTodo } = useContext(TodoContext);
 
-export const TodoList = ({ todoList, removeTodo }: Props) => {
    return (
       <View>
          {todoList.length > 0 ? (
             todoList.map((todo) => (
-               <View>
+               <View key={todo.id}>
                   <Text>{todo.title}</Text>
                   <Text>{todo.content}</Text>
                   <Button onPress={() => removeTodo(todo.id)} title="Remover nota" />

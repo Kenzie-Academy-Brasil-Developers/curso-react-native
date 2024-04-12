@@ -1,11 +1,14 @@
 import { StyleSheet, Text, View } from "react-native";
 import { TodoSection } from "./components/TodoSection";
+import { TodoProvider } from "./providers/TodoContext";
 
 export default function App() {
    return (
-      <View>
-         <TodoSection />
-      </View>
+      <TodoProvider>
+         <View>
+            <TodoSection />
+         </View>
+      </TodoProvider>
    );
 }
 
