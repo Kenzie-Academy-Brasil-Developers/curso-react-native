@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { StyleSheet, View } from "react-native"
+import { View } from "react-native"
 import { TodoCreateForm } from "./TodoCreateForm";
 
 interface ITodo{
