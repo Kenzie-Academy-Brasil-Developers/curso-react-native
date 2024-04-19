@@ -1,22 +1,26 @@
-import { StyleSheet, View } from "react-native";
-import { TodoProvider } from "./providers/TodoContext";
-import { Image } from "expo-image";
+import { StyleSheet, Text, View } from "react-native";
+import { useState } from "react";
+import Checkbox from "expo-checkbox";
+import Slider from "@react-native-community/slider";
 
 export default function App() {
+   const [isChecked, setIsChecked] = useState(false);
+   const [sliderValue, setSliderValue] = useState(0);
+
    return (
-      <TodoProvider>
-         <View>
-            <Image
-               source={require("./assets/favicon.png")}
-               style={{ width: 40, height: 40 }}
-            />
-            <Image
-               source={require("./assets/cat.jpg")}
-               style={{ width: 200, height: 300 }}
-               contentFit="contain"
-            />
-         </View>
-      </TodoProvider>
+      <View>
+         <Text>{isChecked ? "Ativo" : "Inativo"}</Text>
+         <Text>Ativar comportamento</Text>
+         <Checkbox value={isChecked} onValueChange={setIsChecked} />
+         <Text>Volume: {sliderValue}</Text>
+         <Slider
+            style={{ width: 200, height: 6, marginTop: 20 }}
+            value={sliderValue}
+            onValueChange={setSliderValue}
+            minimumValue={0}
+            maximumValue={100}
+         />
+      </View>
    );
 }
 
